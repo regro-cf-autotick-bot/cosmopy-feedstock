@@ -1,5 +1,5 @@
 {% set name = "cosmopy" %}
-{% set version = "3.5.5" %}
+{% set version = "3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cosmopy-{{ version }}.tar.gz
-  sha256: 173f719a226669c030f31e44b6ca7e9afb5ebc2169777a9bf5900715c82854e0
+  sha256: 081a1932a1dca799c70343a7e607e91b476811f90a79246081a1b7ef3778b49b
 
 build:
   entry_points:

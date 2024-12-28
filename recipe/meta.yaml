@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cosmopy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cosmopy-{{ version }}.tar.gz
   sha256: 081a1932a1dca799c70343a7e607e91b476811f90a79246081a1b7ef3778b49b
 
 build:
@@ -14,16 +14,16 @@ build:
     - cosmo = cosmopy.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=40.6.0
     - wheel
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - scipy
     - astropy
@@ -38,6 +38,7 @@ test:
     - cosmo --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/lzkelley/cosmopy
